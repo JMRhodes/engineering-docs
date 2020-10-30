@@ -16,29 +16,28 @@ module.exports = {
   router: {
     middleware: "languageDetection",
   },
+  // generate: {
+  //   routes: [{ route: "/" }],
+  // },
   generate: {
-    routes: [{ route: "/" }],
-  },
-  /* generate: {
     routes() {
-      let routes = []
+      let routes = [];
 
       const StoryblokClientInstance = new StoryblokClient({
-        accessToken: StoryblokToken
-      })
+        accessToken: StoryblokToken,
+      });
 
-      return StoryblokClientInstance.get('cdn/links')
-        .then((res) => {
-          for (i in res.data.links) {
-            routes.push({
-              route: '/' + res.data.links[i].slug
-            })
-          }
+      return StoryblokClientInstance.get("cdn/links").then((res) => {
+        for (i in res.data.links) {
+          routes.push({
+            route: "/" + res.data.links[i].slug,
+          });
+        }
 
-          return routes
-        })
-    }
-  },*/
+        return routes;
+      });
+    },
+  },
   /*
    ** Headers of the page
    */
